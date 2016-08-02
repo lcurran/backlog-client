@@ -10,10 +10,12 @@ Router.map(function () {
   this.route('sign-in');
   this.route('change-password');
   this.route('users');
-  this.route('search');
-  this.route('search/results', { path: '/search/:keyword'});
   this.route('games');
-  this.route('library');
+  this.route('library', { path: '/libraries/:id' });
+  this.route('libraries');
+  this.route('game', { path: '/games/:id' });
+  this.route('user', { path: '/users/:id' });
+  this.route('catalogs');
 });
 
 export default Router;

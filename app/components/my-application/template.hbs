@@ -5,9 +5,11 @@
         {{navbar-header}}
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
+            <li>{{#link-to "games"}}All Games{{/link-to}}</li>
+            <li>{{#link-to "catalogs"}}Search{{/link-to}}</li>
             {{#if isAuthenticated}}
 
-            <li>{{#link-to "library"}}My Games{{/link-to}}</li>
+            <li>{{#link-to "user"}}My Games{{/link-to}}</li>
             <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
             <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
 
