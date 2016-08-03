@@ -11,11 +11,12 @@ Router.map(function () {
   this.route('change-password');
   this.route('users');
   this.route('games');
-  this.route('library', { path: '/libraries/:id' });
-  this.route('libraries');
   this.route('game', { path: '/games/:id' });
   this.route('user', { path: '/users/:id' });
   this.route('catalogs');
+  this.route('search', function() {
+    this.route('results');
+  });
 });
 
 export default Router;

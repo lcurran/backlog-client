@@ -1,5 +1,22 @@
-<div class="col-xs-6 col-sm-4">
-  <a href="#" class="thumbnail">
-    {{game-image game.cover game.name}}
-  </a>
-</div>
+<li>
+  {{#if isAuthenticated}}
+    {{#if game.done}}
+    <button class="btn btn-xs btn-primary">
+      Completed
+    </button>
+    {{else}}
+    <button class="btn btn-xs btn-primary">
+      Incomplete
+    </button>
+    {{/if}}
+  {{/if}}
+  {{#link-to 'game' game}}
+    <div class="thumbnail">
+      {{#if game.cover}}
+        {{game-image game.cover game.name}}
+      {{else}}
+        <h4>{{game.name}}</h4>
+      {{/if}}
+    </div>
+  {{/link-to}}
+</li>

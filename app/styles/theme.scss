@@ -1,7 +1,36 @@
-img {
-  min-width: 100%
+.content {
+  padding: 4%;
 }
 
-btn-primary {
-  color: #000;
+.detail {
+  margin-top: 2em;
+}
+
+img {
+  min-width: 100%;
+}
+
+ul.block-grid-3 {
+   display: block;
+   overflow: hidden;
+   padding: 0;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.grid-item {
+   width: 33.33333%;
+   float: left;
+   padding: 0 12px 12px;
+   display: block;
+   height: auto;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   list-style-type: none;
+}
+
+ul.block-grid-3 > li:nth-of-type(3n+1) {
+   clear: left;
 }

@@ -1,18 +1,29 @@
-@import 'https://fonts.googleapis.com/css?family=Fugaz+One|Harmattan';
+@import 'https://fonts.googleapis.com/css?family=Fugaz+One|Lato|Oswald';
 
-$body-font: 'Harmattan', sans-serif;
-$header-font: 'Fugaz One', serif;
+$body-font: 'Lato', sans-serif;
+$header-font: 'Oswald', sans-serif;
+$logo-font: 'Fugaz One', serif;
 
 body {
   font-family: $body-font;
-  font-size: 20px;
+  font-size: 16px;
 }
+
+h1,
+h2,
+h3,
+h4,
+.btn {
+  font-family: $header-font;
+}
+
+
 
 nav {
   font-size: 1.2em;
 }
 
 .navbar-brand {
-  font-family: $header-font;
-  font-size: .9em;
+  font-family: $logo-font;
+  font-size: 40px;
 }

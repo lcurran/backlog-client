@@ -1,3 +1,5 @@
 <h3>My Games</h3>
 
-{{all-games games=model.games}}
+{{#each model.games as |game|}}
+  {{game-thumbnail game=game}}
+{{/each}}

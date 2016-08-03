@@ -6,7 +6,7 @@
         <div class="collapse navbar-collapse" id="navbar-menu">
           <ul class="nav navbar-nav">
             <li>{{#link-to "games"}}All Games{{/link-to}}</li>
-            <li>{{#link-to "catalogs"}}Search{{/link-to}}</li>
+            <li>{{#link-to "search"}}Search{{/link-to}}</li>
             {{#if isAuthenticated}}
 
             <li>{{#link-to "user" user}}My Games{{/link-to}}</li>
@@ -23,7 +23,7 @@
         </div>
       </nav>
     </div>
-    <div class="container col-sm-9">
+    <div class="container col-sm-9 content">
       {{#each flashMessages.queue as |flash|}}
         {{flash-message flash=flash}}
       {{/each}}
