@@ -9,7 +9,7 @@ export default Ember.Route.extend({
       return this.get('auth').signIn(credentials)
       .finally((credentials) => {
         console.log(credentials);
-        // this.transitionTo(`users/$`);
+        this.transitionTo('user', this.get('auth.credentials.id'));
       })
       .then(() => this.get('flashMessages').success('Thanks for signing in!'))
       .catch(() => {

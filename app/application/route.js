@@ -17,7 +17,7 @@ export default Ember.Route.extend({
       });
       this.store.unloadAll();
     },
-
+    //
     // error (reason) {
     //   let unauthorized = reason.errors.some((error) =>
     //     error.status === '401'

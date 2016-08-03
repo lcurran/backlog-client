@@ -9,6 +9,6 @@ export default Ember.Component.extend({
     'expanded:aria-expanded',
   ],
   toggle: 'collapse',
-  target: '#navigation',
+  target: '#navbar-menu',
   expanded: false,
 });
