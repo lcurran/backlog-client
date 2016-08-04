@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3">
-      <nav class="navbar navbar-default navbar-fixed-side">
+    <div class="col-sm-3 col-lg-2">
+      <nav class="navbar navbar-default custom-nav navbar-fixed-side">
         {{navbar-header}}
         <div class="collapse navbar-collapse" id="navbar-menu">
           <ul class="nav navbar-nav">
@@ -9,7 +9,7 @@
             <li>{{#link-to "search"}}Search{{/link-to}}</li>
             {{#if isAuthenticated}}
 
-            <li>{{#link-to "user" user}}My Games{{/link-to}}</li>
+            <li>{{#link-to "library"}}My Games{{/link-to}}</li>
             <li>{{#link-to "change-password"}}Change Password{{/link-to}}</li>
             <li><a href="#" {{action "signOut"}}>Sign Out</a></li>
 
@@ -23,10 +23,12 @@
         </div>
       </nav>
     </div>
-    <div class="container col-sm-9 content">
+    <div class="container col-sm-9 col-lg-10 content">
       {{#each flashMessages.queue as |flash|}}
         {{flash-message flash=flash}}
       {{/each}}
+
+      {{welcome-banner}}
 
       {{outlet}}
     </div>

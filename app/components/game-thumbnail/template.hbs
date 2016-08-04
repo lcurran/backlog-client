@@ -1,15 +1,4 @@
 <li>
-  {{#if isAuthenticated}}
-    {{#if game.done}}
-    <button class="btn btn-xs btn-primary">
-      Completed
-    </button>
-    {{else}}
-    <button class="btn btn-xs btn-primary">
-      Incomplete
-    </button>
-    {{/if}}
-  {{/if}}
   {{#link-to 'game' game}}
     <div class="thumbnail">
       {{#if game.cover}}

@@ -10,6 +10,16 @@ img {
   min-width: 100%;
 }
 
+.jumbotron {
+  background-image: url('/assets/splash.jpg');
+  background-size: cover;
+  height: 500px;
+}
+
+.jumbo-content {
+  padding-top: 200px;
+}
+
 ul.block-grid-3 {
    display: block;
    overflow: hidden;

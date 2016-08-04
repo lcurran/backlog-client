@@ -1,0 +1,15 @@
+  {{#link-to 'game' lib.game}}
+    <div class="thumbnail">
+      {{#if lib.game.cover}}
+        {{game-image lib.game.cover lib.game.name}}
+      {{else}}
+        <h4>{{lib.game.name}}</h4>
+      {{/if}}
+    </div>
+  {{/link-to}}
+  <div class="caption">
+    <h3>{{lib.game.name}}</h3>
+    <p><button class="btn btn-done btn-xs">Done</button>
+
+      <button class="btn btn-del btn-xs" role="button">Delete</button></p>
+  </div>

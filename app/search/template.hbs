@@ -1,11 +1,11 @@
-<h3>Search for games</h3>
+<h3>Search</h3>
 
 {{search-input keyword=keyword}}
 
 {{#link-to "search.results" (query-params search=keyword)}}
-<button type="submit" class="btn btn-primary">
+<button class="btn">
   Search
 </button>{{/link-to}}
 
-<h4>Search Results</h4>
+<h4>Results</h4>
 {{outlet}}

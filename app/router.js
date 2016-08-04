@@ -17,6 +17,7 @@ Router.map(function () {
   this.route('search', function() {
     this.route('results');
   });
+  this.route('library');
 });
 
 export default Router;

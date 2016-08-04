@@ -4,14 +4,21 @@
   </div>
   <div class="detail col-sm-6 col-md-5">
     {{#if game.cover}}
+    <div class="thumbnail">
       {{game-image game.cover game.name}}
+    </div>
     {{/if}}
     {{#if isAuthenticated}}
-      <button class="detail btn btn-default">Backlog</button>
-      <button class="detail btn btn-default">Played</button>
+      <button class="detail btn ">Backlog</button>
+      <button class="detail btn ">Played</button>
     {{/if}}
   </div>
   <div class="detail col-sm-6 col-md-7">
     <p>{{game.summary}}</p>
   </div>
+  {{#if game.video}}
+    <div class="detail col-sm-12">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/{{unbound game.video}}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  {{/if}}
 </div>

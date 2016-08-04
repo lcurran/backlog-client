@@ -8,5 +8,5 @@ export default DS.Model.extend({
   summary: DS.attr('string'),
   videos: DS.attr('string'),
   cover: DS.attr('string'),
-  users: DS.hasMany('user')
+  users: DS.hasMany('user'),
 });

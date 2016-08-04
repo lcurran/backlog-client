@@ -17,10 +17,15 @@ h4,
   font-family: $header-font;
 }
 
+.jumbotron h1 {
+  font-family: $logo-font
+}
 
 
 nav {
   font-size: 1.2em;
+  color: $graphite;
+  font-family: $header-font;
 }
 
 .navbar-brand {
