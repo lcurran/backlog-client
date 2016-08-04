@@ -1,19 +1,23 @@
 <div class="row">
   <div class="col-xs-6">
+    <div class="row">
       <h3>Completed</h3>
       {{#each library as |library|}}
         {{#if library.done}}
           {{library-thumbnail click="click" del="del" library=library}}
         {{/if}}
       {{/each}}
+    </div>
   </div>
 
   <div class="col-xs-6">
-    <h3>Backlog</h3>
-    {{#each library as |library|}}
-      {{#if (eq library.done false)}}
-        {{library-thumbnail click="click" del="del" library=library}}
-      {{/if}}
-    {{/each}}
+    <div class="row">
+      <h3>Backlog</h3>
+      {{#each library as |library|}}
+        {{#if (eq library.done false)}}
+          {{library-thumbnail click="click" del="del" library=library}}
+        {{/if}}
+      {{/each}}
+    </div>
   </div>
 </div>

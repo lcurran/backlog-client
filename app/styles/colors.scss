@@ -16,6 +16,14 @@ body {
   color: $off-white;
 }
 
+.thumbnail > a {
+  color: $graphite;
+}
+
+.caption > a {
+  color: $graphite;
+}
+
 button {
   background-color: $orange-1;
   color: $off-white;

@@ -17,23 +17,23 @@ export default Ember.Route.extend({
       });
       this.store.unloadAll();
     },
-    //
-    // error (reason) {
-    //   let unauthorized = reason.errors.some((error) =>
-    //     error.status === '401'
-    //   );
-    //
-    //   if (unauthorized) {
-    //     this.get('flashMessages')
-    //     .danger('You must be authenticated to access this page.');
-    //     this.transitionTo('/sign-in');
-    //   } else {
-    //     this.get('flashMessages')
-    //     .danger('There was a problem. Please try again.');
-    //   }
-    //
-    //   return false;
-    // },
+
+    error (reason) {
+      let unauthorized = reason.errors.some((error) =>
+        error.status === '401'
+      );
+
+      if (unauthorized) {
+        this.get('flashMessages')
+        .danger('You must be authenticated to access this page.');
+        this.transitionTo('/sign-in');
+      } else {
+        this.get('flashMessages')
+        .danger('There was a problem. Please try again.');
+      }
+
+      return false;
+    },
 
     showModal: function(name, model) {
       this.render(name, { into: 'application', outlet: 'modal', model: model });

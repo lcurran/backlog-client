@@ -11,25 +11,32 @@ export default Ember.Route.extend({
     return this.get('store').query('catalog', params);
   },
   auth: Ember.inject.service(),
+  ajax: Ember.inject.service(),
   isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
-  unaddedGames: Ember.computed.filterBy('content', 'status', undefined),
+  flashMessages: Ember.inject.service(),
 
   actions: {
     addGame (game) {
       let newGame = this.get('store').createRecord('game', {
         igdb_id: game.id,
-        name: game.name,
-        summary: game.summary,
-        cover: game.cover,
-        video: game.video,
+        name: game.get('name'),
+        summary: game.get('summary'),
+        cover: game.get('cover'),
+        video: game.get('video')
       });
       newGame.save()
       .then((response) => {
         let lib = this.get('store').createRecord('library', {
-          user_id: this.get('auth.credentials.id'),
-          game_id: response.id,
+          game: response,
         });
-        lib.save();
+        lib.save()
+        .then(() => {
+          this.transitionTo('library');
+        })
+        .catch(() => {
+            this.get('flashMessages')
+            .warning('You already backlogged that game!');
+        });
       });
     }
   }
