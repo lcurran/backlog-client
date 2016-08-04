@@ -9,5 +9,11 @@ export default Ember.Component.extend({
 
   done: Ember.computed('user', function() {
     return this.get('store');
-  })
+  }),
+
+  actions: {
+    add () {
+      this.sendAction('add', this.get('game'));
+    },
+  }
 });

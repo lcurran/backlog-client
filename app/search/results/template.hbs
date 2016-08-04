@@ -1,1 +1,5 @@
-{{all-games games=model}}
+<ul class="row-fluid block-grid-3">
+  {{#each model as |game|}}
+    {{game-thumbnail add="addGame" game=game}}
+  {{/each}}
+</ul>

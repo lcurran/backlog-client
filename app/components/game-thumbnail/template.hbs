@@ -1,11 +1,14 @@
 <li>
-  {{#link-to 'game' game}}
     <div class="thumbnail">
-      {{#if game.cover}}
-        {{game-image game.cover game.name}}
-      {{else}}
-        <h4>{{game.name}}</h4>
+      {{#link-to 'game' game}}
+        {{#if game.cover}}
+          {{game-image game.cover game.name}}
+        {{else}}
+          <h4>{{game.name}}</h4>
+        {{/if}}
+        {{/link-to}}
+      {{#if isAuthenticated}}
+        <button class="btn btn-xs" {{action "add"}}>Add game</button>
       {{/if}}
     </div>
-  {{/link-to}}
 </li>

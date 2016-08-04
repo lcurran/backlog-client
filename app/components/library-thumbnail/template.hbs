@@ -1,15 +1,22 @@
-  {{#link-to 'game' lib.game}}
-    <div class="thumbnail">
-      {{#if lib.game.cover}}
-        {{game-image lib.game.cover lib.game.name}}
+  <div class="thumbnail lib">
+    {{#link-to 'game' library.game}}
+      {{#if library.game.cover}}
+        {{game-image library.game.cover library.game.name}}
       {{else}}
-        <h4>{{lib.game.name}}</h4>
+        <img url="/assets/game.png">
       {{/if}}
+    {{/link-to}}
+    <div class="caption">
+      {{#link-to 'game' library.game}}<h4>{{library.game.name}}</h4>{{/link-to}}
+      <p>
+        <button class="btn btn-xs btn-lib" {{action "click"}}>
+          {{#if library.done}}
+            Add to backlog
+          {{else}}
+            Add to completed games
+          {{/if}}
+        </button>
+        <button class="btn btn-xs btn-del" {{action "del"}}>Delete</button>
+      </p>
     </div>
-  {{/link-to}}
-  <div class="caption">
-    <h3>{{lib.game.name}}</h3>
-    <p><button class="btn btn-done btn-xs">Done</button>
-
-      <button class="btn btn-del btn-xs" role="button">Delete</button></p>
   </div>

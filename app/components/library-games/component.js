@@ -1,7 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  notDone: function() {
-    return this.get('done') == "false";
-  }.property('status')
+  actions: {
+    click (library) {
+      this.sendAction('click', library);
+    },
+    del (library) {
+      this.sendAction('del', library);
+    },
+  }
 });

@@ -2,11 +2,14 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   tagName: 'div',
-  auth: Ember.inject.service(),
-  user: Ember.computed.alias('auth.credentials.id'),
-  isAuthenticated: Ember.computed.alias('auth.isAuthenticated'),
+  classNames: ['col-lg-6'],
 
-  done: Ember.computed('user', function() {
-    return this.get('store');
-  })
+  actions: {
+    click () {
+      this.sendAction('click', this.get('library'));
+    },
+    del () {
+      this.sendAction('del', this.get('library'));
+    }
+  }
 });

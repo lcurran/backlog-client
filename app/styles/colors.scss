@@ -25,12 +25,17 @@ button {
   background-color: #b70000;
 }
 
-.btn-done {
-  background-color: #21B2FF;
+.btn-lib {
+  background-color: $off-white;
+  color: $graphite;
 }
 
-.btn-backlog {
-  
+.btn-lib:hover,
+.btn-lib:focus,
+.btn-lib:active,
+.btn-lib.active,
+.open > .dropdown-toggle.btn-lib {
+  background-color: darken($off-white, 10%);
 }
 
 .navbar-default {
