@@ -50,19 +50,11 @@ Show rankings for users with the highest % complete?
 
 ##IGDB:
 
-###Using images:
-https://market.mashape.com/igdbcom/internet-game-database/overview#wiki-images
-image url format:
-(https://res.cloudinary.com/igdb/image/upload/t_{size}/{hash}.jpg)
-
-###Using videos:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/<%video id%>" frameborder="0" allowfullscreen></iframe>
-
-###Fields to request for POST:
-id, Name, Summary, videos, cover
+[Third party API](https://www.igdb.com/)
 
 ###Fields to request for GET(search):
-id, Name
+id, Name, Summary, videos, cover
+
 
 ##Data flow:
 
