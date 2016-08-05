@@ -1,73 +1,78 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+#Backlog
 
-# Authentication in Ember
+A single page application to track your game library.
 
-## Prerequisites
+Links:
+-   [Deployed app](https://lcurran.github.io/backlog-client/)
+-   [Deployed API](https://lcurran-backlog-api.herokuapp.com/)
+-   [API repo](https://github.com/lcurran/backlog-api)
 
--   [ga-wdi-boston/ember-resources](https://github.com/ga-wdi-boston/ember-resources)
--   [ga-wdi-boston/ember-resources-one-to-many](https://github.com/ga-wdi-boston/ember-resources-one-to-many)
+##Game Library Scope
 
-## Objectives
+## User stories
 
-By the end of this, developers should be able to:
+### Core features
 
--   Implement token authentication in an Ember application.
--   Enforce authentication in protected routes.
+-   Want to be able to create an account
+-   Want to be able to manage my account
+-   Want to be able to search for games and add them to my library
+-   Want to be able to mark games as complete, incomplete, or in progress
+-   Want to be able to remove games from library
+-   Want to be able to see my backlog % complete
 
-## Preparation
+### Reach features
 
-1.  [Fork and clone](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
-    this repository.
-1.  Install dependencies with `npm install` and `bower install`.
-1.  Follow the instructions to setup the [API]().
-1.  Start the font-end server with `ember server --proxy http://localhost:3000`.
+-   Want to be able to see other peoples libraries
+-   Want to be able to rate and review games --> (this would be a new table probs)
+-   Want to be able to import my steam library
+-   Want to be able to create a user profile
 
-## Ember Services
 
-## Demo: Write a Demo
+## Homepage ideas
 
-Demos are demonstrations, and developers should give their full attention to
-them. It's a great time for them to take notes about important concepts before
-applying them in an exercise.
+Show rankings for most popular games?
+Show rankings for users with the highest % complete?
 
-Demos correspond to the "I do" portion of scaffolding from consultant trainging.
+## SQL Database
 
-## Exercise: Write an Exercise
+###Tables:
 
-During exercises, developers should apply concepts covered in the previous demo.
-This is their first chance to generalize concepts introduced. Exercises should
-be very focused, and flow natural into a lab.
+-   Users
+-   Games
+-   Users/Games m:m join table
+-   (reach) Reviews table -> Games/Reviews 1:m relationship
+-   (reach) Profiles table > 1:1 with users
 
-Exercises correspond to the "We do" portion of scaffolding from consultant
-trainging.
+##Third party APIs:
 
-## Lab: Write a Lab
+-   [IGDB API](https://www.igdb.com/api)
+-   [Steam API](https://steamcommunity.com/dev)(Future implementation)
 
-During labs, developers get to demonstrate their understanding of concepts from
-demos and applied knowledge from exercises. Labs are an opportunity for
-developers to build confidence, and also serve as a diagnostic tool for
-consultants to evaluate developer understanding.
+##IGDB:
 
-Labs should be timed explicitly using a timer. When estimating the time it will
-take to complete a lab, it is better to overestimate. During labs, consultants
-should circle the room and interact with developers, noting patterns and
-prompting with hints on how to complete the lab. If developers end early, a
-consultant may stop the lab timer. If developers do not finish in time, a
-consultant may give more time at her discretion based on current talk pace, the
-current estimate for the talk, and the importance of completing the lab while
-consultant support is available.
+###Using images:
+https://market.mashape.com/igdbcom/internet-game-database/overview#wiki-images
+image url format:
+(https://res.cloudinary.com/igdb/image/upload/t_{size}/{hash}.jpg)
 
-Labs correspond to the "You do" portion of scaffolding from consultant
-trainging.
+###Using videos:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/<%video id%>" frameborder="0" allowfullscreen></iframe>
 
-## Additional Resources
+###Fields to request for POST:
+id, Name, Summary, videos, cover
 
--   [Implementing Authentication with Ember Services - Ember Igniter](http://emberigniter.com/implementing-authentication-with-ember-services/)
--   [jpadilla/ember-simple-auth-token: Ember Simple Auth extension that is compatible with token-based authentication like JWT.](https://github.com/jpadilla/ember-simple-auth-token)
--   [simplabs/ember-simple-auth: A library for implementing authentication/authorization in Ember.js applications.](https://github.com/simplabs/ember-simple-auth)
--   [Create your first Ember 2.0 app: From authentication to calling an API](https://auth0.com/blog/2015/08/11/create-your-first-ember-2-dot-0-app-from-authentication-to-calling-an-api/)
+###Fields to request for GET(search):
+id, Name
 
-## [License](LICENSE)
+##Data flow:
 
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+User searches for game > GET matching names from IGDB
+User selects a game to add > GET to my DB, check by IGDB id if game exists in DB already
+IF EXISTS > POST to join table
+IF DOES NOT EXIST > GET to IGDB for full information, POST to my games db, POST to join table
+
+
+##Tools:
+
+-  Unirest.io (gem install unirest)
+-  [Steam Condenser gem](https://github.com/koraktor/steam-condenser)
