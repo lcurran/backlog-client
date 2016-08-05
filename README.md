@@ -16,12 +16,12 @@ Links:
 -   Want to be able to create an account
 -   Want to be able to manage my account
 -   Want to be able to search for games and add them to my library
--   Want to be able to mark games as complete, incomplete, or in progress
+-   Want to be able to mark games as complete, incomplete
 -   Want to be able to remove games from library
--   Want to be able to see my backlog % complete
 
 ### Reach features
 
+-   Want to be able to see my backlog % complete
 -   Want to be able to see other peoples libraries
 -   Want to be able to rate and review games --> (this would be a new table probs)
 -   Want to be able to import my steam library
