@@ -1,3 +1,4 @@
-<h3>My Games</h3>
+<h3>My Backlog</h3>
 
-{{library-games del="deleteLib" click="toggleDone" library=model}}
+{{progress-bar percentage=model.percentage}}
+{{library-games del="deleteLib" click="toggleDone" library=model.library}}
